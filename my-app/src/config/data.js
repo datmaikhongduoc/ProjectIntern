@@ -1,4 +1,4 @@
-export const blogList = [
+export const uilist = [
     {
       id: 1,
       title: '7 CSS tools you should be using ',

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./stylesSearch.css"
+import "./styles.scss"
 import {AiOutlineSearch} from "react-icons/ai"
 
 const SearchBar = ({ formSubmit, value, handleSearchKey, clearSearch }) => (

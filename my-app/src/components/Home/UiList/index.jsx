@@ -1,15 +1,15 @@
 import React from 'react';
-import BlogItem from './UiItem';
-import './styles.css';
+import UiItem from './UiItem';
+import './styles.scss';
 
-const BlogList = ({ blogs }) => {
+const UiList = ({ UiData }) => {
   return (
-    <div className='blogList-wrap'>
-      {blogs.map((blog) => (
-        <BlogItem blog={blog} />
+    <div className='ui-list-wrap'>
+      {UiData.map((item) => (
+        <UiItem UiData={item} />
       ))}
     </div>
   );
 };
 
-export default BlogList;
+export default UiList;

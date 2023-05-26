@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
-import './styles.css';
+import './styles.scss';
 import {BsChevronDown} from "react-icons/bs"
 import SearchBar from '../SearchBar';
-import { blogList } from '../../../config/data';
-import BlogList from '../../Home/UiList/index';
+import { uilist } from '../../../config/data';
 import EmptyList from '../../common/EmptyList';
+import UiList from '../../Home/UiList/index';
 
 
 const Header = () => {
-    const [blogs, setBlogs] = useState(blogList);
+    const [lists, setLists] = useState(uilist);
     const [searchKey, setSearchKey] = useState('');
     const [showContent, setShowContent] = useState(false);
     const navigate = useNavigate();
@@ -23,11 +23,11 @@ const Header = () => {
   
     // Search for blog by category
     const handleSearchResults = () => {
-      const allBlogs = blogList;
-      const filteredBlogs = allBlogs.filter((blog) =>
-        blog.category.toLowerCase().includes(searchKey.toLowerCase().trim())
+      const allBlogs = uilist;
+      const filteredBlogs = allBlogs.filter((lists) =>
+        lists.category.toLowerCase().includes(searchKey.toLowerCase().trim())
       );
-      setBlogs(filteredBlogs);
+      setLists(filteredBlogs);
 
       if (filteredBlogs.length === 0) {
        
@@ -40,7 +40,7 @@ const Header = () => {
   
     
     const handleClearSearch = () => {
-      setBlogs(blogList);
+      setLists(uilist);
       setSearchKey('');
       setShowContent(false);
     };
@@ -69,7 +69,7 @@ const Header = () => {
                 <li className="menu-item">
                 <Link to="/back-end">Back-end</Link>
                 </li>
-                <li className="menu-item item-lainnaya">
+                <li className="menu-item lainnaya-item">
                 lainnya <BsChevronDown/>
                 </li>
             </ul>
@@ -84,7 +84,7 @@ const Header = () => {
         </div>
     </header>
    
-    {showContent && (!blogs.length ? <EmptyList searchKey={searchKey}  /> : <BlogList blogs={blogs} />)}
+    {showContent && (!lists.length ? <EmptyList searchKey={searchKey}  /> : <UiList UiData={lists} />)}
    
     </>
     )

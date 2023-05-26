@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { blogList } from '../../config/data';
+import { uilist } from '../../config/data';
 import EmptyList from '../../components/common/EmptyList';
-import './styles.css';
+import "./styles.scss";
 import { Link } from 'react-router-dom';
 
-const Blog = () => {
+const UiDesign = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    let blog = blogList.find((blog) => blog.id === parseInt(id));
+    let blog = uilist.find((blog) => blog.id === parseInt(id));
     if (blog) {
       setBlog(blog);
     }
@@ -18,26 +18,26 @@ const Blog = () => {
 
   return (
     <>
-      <Link className='blog-goBack' to='/'>
+      <Link className='ui-go-back' to='/'>
         <span> &#8592;</span> <span>Go Back</span>
       </Link>
       {blog ? (
-        <div className='blog-wrap'>
+        <div className='ui-container'>
           <header>
-            <div className='blog-date'> UI DESIGN  <li>{blog.createdAt}</li> </div>
+            <div className='ui-date'> UI DESIGN  <li>{blog.createdAt}</li> </div>
             <h1>{blog.title}</h1>
           </header>
           <footer>
-            <div className='blogItem-author'>
+            <div className='ui-item-author'>
               <img src={blog.authorAvatar} alt='avatar' />
               <div>
                 <h6>{blog.authorName}</h6>
                 <p>{blog.tagName}</p>
               </div>
             </div>
-        </footer>
+          </footer>
           <img src={blog.cover} alt='cover' />
-          <p className='blog-desc'>{blog.description}</p>
+          <p className='ui-desc'>{blog.description}</p>
           
         </div>
       ) : (
@@ -47,4 +47,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default UiDesign;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css';
+import './styles.scss';
 
-const BlogItem = ({
-  blog: {
+const UiItem = ({
+  UiData: {
     description,
     title,
     createdAt,
@@ -17,20 +17,20 @@ const BlogItem = ({
 }) => {
     const truncatedDescription = description.substring(0, 120);
   return (
-    <div className='blogItem-wrap'>
-      <img className='blogItem-cover' src={cover} alt='cover' />
-      <div className='blogItem-info'>{category} <li>{createdAt}</li></div>
+    <div className='ui-item'>
+      <img className='ui-item-cover' src={cover} alt='cover' />
+      <div className='ui-item-info'>{category} <li>{createdAt}</li></div>
       <h3>{title}</h3>
-      <p className='blogItem-desc'>{truncatedDescription}.</p>
+      <p className='ui-item-desc'>{truncatedDescription}.</p>
       <footer>
-        <div className='blogItem-author'>
+        <div className='ui-item-author'>
           <img src={authorAvatar} alt='avatar' />
           <div>
             <h6>{authorName}</h6>
             <p>{tagName}</p>
           </div>
         </div>
-        <Link className='blogItem-link' to={`/template/${id}`}>
+        <Link className='ui-item-link' to={`/template/${id}`}>
           ➝
         </Link>
       </footer>
@@ -38,4 +38,4 @@ const BlogItem = ({
   );
 };
 
-export default BlogItem;
+export default UiItem;

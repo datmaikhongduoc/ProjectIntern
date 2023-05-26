@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { blogList } from '../../config/data';
-import BlogList from '../../components/Home/UiList';
-import "./style.css"
+import { blogList, uilist } from '../../config/data';
+import "./styles.scss"
+import UiList from './../../components/Home/UiList/index';
 const UiDesign = () => {
-    const [blogs, setblogs] = useState(blogList);
+    const [blogs, setblogs] = useState(uilist);
     
   return (
     <div className='UI-Design'>
         <h1>UI Design</h1>
-        <BlogList  blogs={blogs}/>
+        <UiList  UiData={blogs}/>
     </div>
     
   )

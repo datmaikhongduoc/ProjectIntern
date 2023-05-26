@@ -1,0 +1,114 @@
+
+// .navBar {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding: 10px;
+//     margin-bottom: 2rem;
+//   }
+  
+//   .logo {
+//     display: flex;
+//     align-items: center;
+//   }
+//   .logo-text {
+//     display: flex;
+//     margin-left: 10px;
+//     align-items: center;
+//     gap: 10px;
+    
+//   }
+//   .logo-text a {
+//     text-decoration: none;
+//     color: white;
+//   }
+//   .logo-icon {
+//     font-size: 24px;
+//     font-weight: bold;
+//     background-color: rgb(160, 160, 152);
+//     padding: .5rem 1rem;
+//   }
+//   .logo-name {
+//     font-size: 14px;
+//     font-weight: 700;
+//   }
+//   .menu {
+//     display: flex;
+//     align-items: center;
+//   }
+//   .menu-list {
+//     list-style: none;
+//     display: flex;
+//   } 
+//   .menu-item {
+//     margin-right: 10px;
+//     text-decoration: none;
+//     color: white;
+//   }
+//   .menu-item a {
+//     text-decoration: none;
+//     color: white;
+//   }
+//   .item-lainnaya{
+//     display: flex;
+//     gap: 10px;
+//     align-items: center;
+//   }
+//   ============================= old code ======================================
+
+//============================== Mixin =================================
+@mixin decoration {
+    text-decoration: none;
+    color: white;
+}
+@mixin container-flex {
+    display: flex;
+    align-items: center;
+}
+//============================== Mixin =================================
+.navBar {
+        @include container-flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-bottom: 2rem;
+        .logo {
+            
+            .logo-text {
+                @include container-flex;
+                gap: 10px;
+                .logo-name {
+                    font-size: 14px;
+                    font-weight: 700;
+                    a {
+                        @include decoration;
+                    }
+                }    
+                .logo-icon {
+                    font-size: 24px;
+                    font-weight: bold;
+                    background-color: rgb(151, 145, 64);
+                    padding: .5rem 1rem;
+                }
+            }
+        }
+        .menu{
+            @include container-flex;
+            .menu-list {
+                    list-style: none;
+                    display: flex;
+                    .menu-item{
+                        margin-right: 10px;
+                        text-decoration: none;
+                        color: white;
+                        a {
+                            margin-right: 10px;
+                            @include decoration;
+                        }
+                    }
+                    .lainnaya-item{
+                        @include container-flex;
+                        gap: 10px;
+                    }
+                }
+        }
+}
