@@ -1,0 +1,45 @@
+/*================================= UI-Design ========================== */
+.UI-Design{
+    text-align: center;
+}
+.UI-Design h1{
+    margin-bottom: 1rem ;
+}
+/* =================================== HOME ========================  */
+.blogItem-wrap-home{
+    display: grid;
+    grid-template-columns: 65% auto;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.blog-item-content{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 10px;
+}
+.blogItem-author-home {
+    display: flex;
+    align-items: center;
+  }
+  
+  .blogItem-author-home img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5rem;
+  }
+  
+  .blogItem-author-home p {
+    font-size: 0.6rem;
+    color: #a9a9a9;
+    font-weight: 600;
+  }
+  .home-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: space-between;
+  }
