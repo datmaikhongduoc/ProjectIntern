@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "./styles.scss"
+// import "../../scss/pages/home.scss"
+import "../../scss/main.scss";
 import UiList from './../../components/Home/UiList/index';
 import { uilist } from './../../config/data';
 
 const Home = () => {
   const [lists, setLists] = useState(uilist);
+  const [showContent, setShowContent] = useState(true);
   const filteredData = uilist.filter((item) => item.category === 'development');
   const maxDescriptionLength = 150;
   return (
@@ -41,7 +43,8 @@ const Home = () => {
       </div>
       ))}
       
-      <UiList UiData={lists} />
+      {/* <UiList UiData={lists} /> */}
+      {showContent && <UiList UiData={lists} />}
     </div>
   );
 };

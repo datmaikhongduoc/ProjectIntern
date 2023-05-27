@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { uilist } from '../../config/data';
 import EmptyList from '../../components/common/EmptyList';
-import "./styles.scss";
+// import "../../scss/pages/UiDesign/styles.scss";
 import { Link } from 'react-router-dom';
 
 const UiDesign = () => {
@@ -18,7 +18,7 @@ const UiDesign = () => {
 
   return (
     <>
-      <Link className='ui-go-back' to='/'>
+      <Link className='ui-go-back' to='/trangchu'>
         <span> &#8592;</span> <span>Go Back</span>
       </Link>
       {blog ? (

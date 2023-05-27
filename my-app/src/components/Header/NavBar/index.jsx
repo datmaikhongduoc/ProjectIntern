@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
-import './styles.scss';
+// import '../../../scss/components/Header/navBarStyles.scss';
 import {BsChevronDown} from "react-icons/bs"
 import SearchBar from '../SearchBar';
 import { uilist } from '../../../config/data';
@@ -30,8 +30,8 @@ const Header = () => {
       setLists(filteredBlogs);
 
       if (filteredBlogs.length === 0) {
-       
         navigate(`/empty-list?searchKey=${searchKey}`);
+   
       }else {
         // Navigate to SearchResults page with search results
         navigate(`/search-results?searchKey=${searchKey}`);
@@ -39,6 +39,7 @@ const Header = () => {
     };
   
     
+
     const handleClearSearch = () => {
       setLists(uilist);
       setSearchKey('');
@@ -53,7 +54,7 @@ const Header = () => {
             <div className="logo-text">
                 <span className="logo-icon">E</span>
                 <span className="logo-name">
-                    <Link to="/">Epictetus</Link>
+                    <Link  to="/trangchu" onClick={()=> {handleClearSearch()}}>Epictetus</Link>
                 </span>
             </div>
         </div>
@@ -61,7 +62,7 @@ const Header = () => {
         <nav className="menu">
             <ul className="menu-list">
                 <li className="menu-item">
-                <Link to="/ui-design">UI Design</Link>
+                <Link to="/ui-design" onClick={()=> {handleClearSearch()}}>UI Design</Link>
                 </li>
                 <li className="menu-item">
                 <Link to="/front-end">Front-end</Link>
@@ -84,8 +85,15 @@ const Header = () => {
         </div>
     </header>
    
-    {showContent && (!lists.length ? <EmptyList searchKey={searchKey}  /> : <UiList UiData={lists} />)}
-   
+    {/* {showContent && (!lists.length ? <EmptyList searchKey={searchKey}  /> : <UiList UiData={lists} />)} */}
+    {showContent ? (
+        lists.length === 0 ? (
+          <EmptyList searchKey={searchKey} />
+        ) : (
+          <UiList UiData={lists} />
+        )
+      ) : null}
+    
     </>
     )
 };

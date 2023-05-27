@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles.scss';
+// import '../../../../scss/components/Home/uiItemStyle.scss';
 
 const UiItem = ({
   UiData: {
@@ -14,8 +14,10 @@ const UiItem = ({
     id,
     tagName
   },
+  handleUiItemClick
 }) => {
     const truncatedDescription = description.substring(0, 120);
+  
   return (
     <div className='ui-item'>
       <img className='ui-item-cover' src={cover} alt='cover' />
@@ -30,7 +32,7 @@ const UiItem = ({
             <p>{tagName}</p>
           </div>
         </div>
-        <Link className='ui-item-link' to={`/template/${id}`}>
+        <Link className='ui-item-link' to={`/template/${id}`} onClick={handleUiItemClick}>
           ➝
         </Link>
       </footer>

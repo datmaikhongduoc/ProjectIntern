@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { blogList, uilist } from '../../config/data';
-import "./styles.scss"
+import { uilist } from '../../config/data';
+// import "../../scss/pages/uiDesign.scss"
 import UiList from './../../components/Home/UiList/index';
 const UiDesign = () => {
     const [blogs, setblogs] = useState(uilist);

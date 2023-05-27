@@ -1,5 +1,5 @@
 import React from 'react';
-import "./styles.scss"
+import "../../../scss/components/Header/searchBarStyles.scss"
 import {AiOutlineSearch} from "react-icons/ai"
 
 const SearchBar = ({ formSubmit, value, handleSearchKey, clearSearch }) => (

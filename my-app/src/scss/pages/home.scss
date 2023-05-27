@@ -1,10 +1,4 @@
-/*================================= UI-Design ========================== */
-.UI-Design{
-    text-align: center;
-    h1{
-      margin-bottom: 1rem ;
-  }
-}
+
 /* =================================== HOME ========================  */
 .home-container{
     display: grid;
@@ -26,6 +20,12 @@
       flex-direction: column;
       justify-content: left;
       gap: 10px;
+      .home-item-info{
+        display: flex;
+        li{
+            margin-left: 1rem;
+        }
+      }
   }
   .home-item-footer {
     display: flex;

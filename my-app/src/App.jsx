@@ -10,16 +10,25 @@ import UiDesign from './page/Home/UiDesign';
 
 
 
+
 const App = () => {
   return (
     <div className='container'>
           <Header/>
               <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/trangchu" element={<Home/>}/>
                 <Route path="/ui-design" element={<UiDesign/>}/> 
                 <Route path="/template/:id" element={<UIDesign/>}/>
               </Routes>
           <Footer/>
+
+          {/* <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route path="/trangchu" element={<Home />} />
+              <Route path="/ui-design" element={<UiDesign />} />
+              <Route path="/template/:id" element={<UIDesign />} />
+            </Route>
+          </Routes> */}
         
     </div>
   )
